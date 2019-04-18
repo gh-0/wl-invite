@@ -1,26 +1,32 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './store';
+import actions from './actions/user';
+import Invite from './routes/Invite/index';
+import './global.css';
 
 class App extends Component {
   render() {
+    // 查询全部
+    store.dispatch(actions.queryUserInfo());
+    store.dispatch(actions.queryInviteList());
+    store.dispatch(actions.queryTutor());
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Provider store={store}>
+        <div
+          style={{
+            maxWidth: '600px',
+            minHeight: '100%',
+            backgroundImage: 'linear-gradient(-135deg, #FF6A4D 0%, #FF3333 100%)',
+            margin: '0 auto',
+          }}  
+        >
+          <Router>
+            <Route path="/invite" component={Invite} />
+          </Router>
+        </div>
+      </Provider>
     );
   }
 }
