@@ -12,8 +12,6 @@ import './global.css';
 
 class App extends Component {
   render() {
-    // @HACK
-    window.android = window.android || window.ios;
     // 查询全部
     store.dispatch(actions.queryUserInfo());
     store.dispatch(actions.queryInviteList());

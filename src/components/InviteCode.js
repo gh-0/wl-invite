@@ -1,10 +1,14 @@
 import React from 'react';
+import fnCall from '../utils/fn-call';
 import Clipboard from 'clipboard';
 import copyIcon from '../assets/ic_invite_copy_n@2x.png';
 
 class InviteCode extends React.Component {
   componentDidMount() {
-    new Clipboard('.copy');
+    const clip = new Clipboard('.copy');
+    clip.on('success', () => {
+      fnCall('alert', { type: 1, message: '复制成功' }, ['type', 'message']);
+    });
   }
   render() {
     const { code } = this.props;

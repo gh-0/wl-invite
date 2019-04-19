@@ -1,4 +1,5 @@
 import { put, call, takeEvery } from 'redux-saga/effects';
+import fnCall from '../utils/fn-call';
 import request from '../utils/request';
 import actions from '../actions/user';
 
@@ -7,7 +8,7 @@ function* queryUserInfo() {
   if (data.info === 'OK') {
     yield put(actions.userInfo(data.personal));
   } else {
-    alert('(⊙o⊙)？');
+    fnCall('alert', { type: 1, message: '出错了😭' }, ['type', 'message']);
   }
 }
 
@@ -16,7 +17,7 @@ function* queryInviteList() {
   if (data.info === 'OK') {
     yield put(actions.inviteList(data.result));
   } else {
-    alert('(⊙o⊙)？');
+    fnCall('alert', { type: 1, message: '出错了😭' }, ['type', 'message']);
   }
 }
 
@@ -25,7 +26,7 @@ function* queryTutor() {
   if (data.info === 'OK') {
     yield put(actions.tutor(data.result && data.result.length ? data.result[0] : {}));
   } else {
-    alert('(⊙o⊙)？');
+    fnCall('alert', { type: 1, message: '出错了😭' }, ['type', 'message']);
   }
 }
 
@@ -34,7 +35,7 @@ function* fakeInvite({ payload }) {
   if (data.info === 'OK') {
     yield put(actions.queryTutor());
   } else {
-    alert('(⊙o⊙)？');
+    fnCall('alert', { type: 1, message: '出错了😭' }, ['type', 'message']);
   }
 }
 

@@ -33,7 +33,7 @@ class Share extends React.Component {
         />
         <div
           style={{
-            paddingTop: '7rem',
+            paddingTop: '3.2rem',
             position: 'relative',
           }}
         />

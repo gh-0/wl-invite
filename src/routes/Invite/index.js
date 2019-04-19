@@ -20,7 +20,7 @@ const Invite = ({
   return (
     <div
       style={{
-        padding: '7rem 0',
+        padding: '3.2rem 0',
         paddingBottom: '5.9rem',
         position: 'relative',
         minHeight: '100vh',

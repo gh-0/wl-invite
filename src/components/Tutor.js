@@ -1,4 +1,5 @@
 import React from 'react';
+import fnCall from '../utils/fn-call';
 import Avatar from './Avatar';
 import lIcon from '../assets/l@2x.png';
 import rIcon from '../assets/r@2x.png';
@@ -18,10 +19,7 @@ class Tutor extends React.Component {
       >
         <div
           onClick={() => {
-            const { android } = window;
-            if (android && android.onClickUser) {
-              android.onClickUser(userId);
-            }
+            fnCall('onClickUser', { userId }, ['userId']);
           }}
         >
           <Avatar src={avatar} size="l" hasLink={true} />

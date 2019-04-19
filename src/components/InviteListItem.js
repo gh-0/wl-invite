@@ -1,5 +1,6 @@
 import React from 'react';
 import Avatar from './Avatar';
+import fnCall from '../utils/fn-call';
 
 class InviteListItem extends React.Component {
   render() {
@@ -8,10 +9,7 @@ class InviteListItem extends React.Component {
     return (
       <div
         onClick={() => {
-          const { android } = window;
-          if (android && android.onClickUser) {
-            android.onClickUser(userId);
-          }
+          fnCall('onClickUser', { userId }, ['userId']);
         }}
         style={{
           display: 'flex',
