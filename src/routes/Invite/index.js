@@ -63,7 +63,7 @@ const Invite = ({
           marginTop: '1.6rem',
         }}
       >
-        {!codeInvite && <InviteInput onSubmit={bindInvite} />}
+        {!(tutor && tutor.userId) && <InviteInput onSubmit={bindInvite} />}
       </div>
       <Tabs>
         <TabPane title="我邀请">
@@ -80,13 +80,16 @@ const Invite = ({
           {!(inviteList && inviteList.length) && <Empty />}
         </TabPane>
         <TabPane title="邀请我">
-          <Tutor
-            avatar={tutor.headImage}
-            date={tutor.date}
-            username={tutor.username}
-            userId={tutor.userId}
-          />
-          {!(tutor && tutor.userId) && <Empty />}
+          {!(tutor && tutor.userId) ? (
+            <Empty />
+          ) : (
+            <Tutor
+              avatar={tutor.headImage}
+              date={tutor.date}
+              username={tutor.username}
+              userId={tutor.userId}
+            />
+          )}
         </TabPane>
       </Tabs>
       <FixedBar />
