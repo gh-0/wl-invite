@@ -1,0 +1,111 @@
+{
+	"info": {
+		"_postman_id": "918cdd42-050b-4909-ad69-a062224790aa",
+		"name": "分享H5",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "推文详情",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/share/base/city/18582",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"share",
+						"base",
+						"city",
+						"18582"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "获取签名",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"url\":\"http://mp.weixin.qq.com\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/share/base/signature",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"share",
+						"base",
+						"signature"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "推文内容",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/city/article/content/{cityId}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"city",
+						"article",
+						"content",
+						"{cityId}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "问题详情",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/share/base/question/29253",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"share",
+						"base",
+						"question",
+						"29253"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

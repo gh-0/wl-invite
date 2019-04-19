@@ -8,9 +8,8 @@ import TabPane from '../../components/TabPane';
 import InviteListItem from '../../components/InviteListItem';
 import Tutor from '../../components/Tutor';
 import FixedBar from '../../components/FixedBar';
+import Empty from '../../components/Empty';
 import actions from '../../actions/user';
-
-import dotBg from '../../assets/邀请拉新BG@1x.png';
 
 const Invite = ({
   userInfo: { avatar, username, userId, code, codeInvite },
@@ -21,13 +20,10 @@ const Invite = ({
   return (
     <div
       style={{
-        padding: '40px 0',
+        padding: '7rem 0',
+        paddingBottom: '5.9rem',
         position: 'relative',
         minHeight: '100vh',
-        background: `url(${dotBg})`,
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
         zIndex: 0,
       }}
     >
@@ -81,6 +77,7 @@ const Invite = ({
               userId={el.userId}
             />
           ))}
+          {!(inviteList && inviteList.length) && <Empty />}
         </TabPane>
         <TabPane title="邀请我">
           <Tutor
@@ -89,6 +86,7 @@ const Invite = ({
             username={tutor.username}
             userId={tutor.userId}
           />
+          {!(tutor && tutor.userId) && <Empty />}
         </TabPane>
       </Tabs>
       <FixedBar />

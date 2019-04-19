@@ -59,7 +59,7 @@ class Tabs extends React.Component {
           style={{
             background: '#fff',
             borderRadius: '0 0 10px 10px',
-            minHeight: '18rem',
+            minHeight: '20rem',
             padding: "0 .8rem",
             paddingBottom: ".8rem"
           }}

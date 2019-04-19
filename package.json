@@ -25,6 +25,7 @@
   "eslintConfig": {
     "extends": "react-app"
   },
+  "homepage" : "https://api.wenliaokeji.com/h5",
   "browserslist": [
     ">0.2%",
     "not dead",

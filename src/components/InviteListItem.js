@@ -7,6 +7,12 @@ class InviteListItem extends React.Component {
 
     return (
       <div
+        onClick={() => {
+          const { android } = window;
+          if (android && android.onClickUser) {
+            android.onClickUser(userId);
+          }
+        }}
         style={{
           display: 'flex',
           alignContent: 'center',
@@ -60,8 +66,8 @@ class InviteListItem extends React.Component {
             color: '#8A8A8F',
             fontSize: '1rem',
             position: 'absolute',
-            padding: "0 8px",
-            top: ".9rem",
+            padding: '0 8px',
+            top: '.9rem',
             right: 0,
           }}
         >

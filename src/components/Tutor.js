@@ -16,7 +16,16 @@ class Tutor extends React.Component {
           padding: '1.6rem',
         }}
       >
-        <Avatar src={avatar} size="l" hasLink={true} />
+        <div
+          onClick={() => {
+            const { android } = window;
+            if (android && android.onClickUser) {
+              android.onClickUser(userId);
+            }
+          }}
+        >
+          <Avatar src={avatar} size="l" hasLink={true} />
+        </div>
         <p
           style={{
             fontSize: '16px',
