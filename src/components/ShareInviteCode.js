@@ -6,7 +6,7 @@ const ShareInviteCode = ({ code }) => {
       style={{
         background: 'rgba(0,0,0,0.20)',
         borderRadius: '0.8rem',
-        color: 'rgba(255, 255, 255)',
+        color: '#FFF',
         textAlign: 'center',
         padding: '0.8rem 2.4rem',
         width: '16.7rem',
