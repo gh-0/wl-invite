@@ -6,7 +6,7 @@ class InviteSteps extends React.Component {
     return (
       <div style={{
         width: "80vw",
-        margin: "1.6rem auto"
+        margin: "4.2rem auto"
       }}>
         <img alt="step" src={StepIcon} style={{
           width: "100%"

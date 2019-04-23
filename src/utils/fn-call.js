@@ -1,4 +1,5 @@
 function fnCall(action, params, keys = []) {
+  console.log(action, params, keys)
   const { android, webkit } = window;
   if (android) {
     if (typeof android[action] === "function") {
