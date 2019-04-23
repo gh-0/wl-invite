@@ -6,7 +6,7 @@ import wechatMomentIcon from "../assets/ic_weekly_newspaper_share_wechatmoments_
 import qqIcon from "../assets/ic_weekly_newspaper_share_qq_n.png";
 import qqZoneIcon from "../assets/ic_weekly_newspaper_share_zone_n.png";
 
-const share = (type, title, image) => {
+const share = (type, title) => {
   const search = new URLSearchParams(window.location.search);
   const token = search.get("token") || "004FD89B536DD4038DA497B994D6CE92";
   fnCall(
@@ -16,9 +16,8 @@ const share = (type, title, image) => {
       url: `https://api.wenliaokeji.com/h5/?token=${token}#/share`,
       title,
       image:
-        image ||
         "https://wllive.oss-cn-shenzhen.aliyuncs.com/resources/sys/icon/512wenliaox.png",
-      content: "发布问题，解决你的疑惑。写下故事，找到有趣的人。"
+      content: "发布问题，解决你的疑惑。\n写下故事，找到有趣的人。"
     },
     ["type", "url", "title", "image", "content"]
   );
@@ -43,7 +42,7 @@ const Icon = ({ icon, onClick }) => {
   );
 };
 
-const FixedBar = ({ userInfo: { username, headImage } }) => {
+const FixedBar = ({ userInfo: { username } }) => {
   const title = `你的好友 ${username} 在玩问聊，邀请你一起来`;
   return (
     <div
@@ -61,25 +60,25 @@ const FixedBar = ({ userInfo: { username, headImage } }) => {
     >
       <Icon
         onClick={() => {
-          share(1, title, headImage);
+          share(1, title);
         }}
         icon={wechatIcon}
       />
       <Icon
         onClick={() => {
-          share(2, title, headImage);
+          share(2, title);
         }}
         icon={wechatMomentIcon}
       />
       <Icon
         onClick={() => {
-          share(3, title, headImage);
+          share(3, title);
         }}
         icon={qqIcon}
       />
       <Icon
         onClick={() => {
-          share(4, title, headImage);
+          share(4, title);
         }}
         icon={qqZoneIcon}
       />

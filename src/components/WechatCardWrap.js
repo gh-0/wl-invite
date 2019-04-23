@@ -39,18 +39,17 @@ class WechatCardWrap extends React.Component {
   render() {
     const { wx, location } = window;
     const {
-      userInfo: { username, headImage }
+      userInfo: { username }
     } = this.props;
     if (username) {
       const title = `你的好友 ${username} 在玩问聊，邀请你一起来`;
       const imgUrl =
-        headImage ||
         "https://wllive.oss-cn-shenzhen.aliyuncs.com/resources/sys/icon/512wenliaox.png";
 
       wx.ready(function() {
         wx.onMenuShareAppMessage({
           title,
-          desc: "发布问题，解决你的疑惑。写下故事，找到有趣的人。",
+          desc: `发布问题，解决你的疑惑。\n写下故事，找到有趣的人。`,
           link: location.href,
           imgUrl
         });

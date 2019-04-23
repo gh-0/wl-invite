@@ -8,7 +8,7 @@ const DownloadBtn = () => {
         margin: "0 auto",
         textAlign: "center",
         height: "4.2rem",
-        width: "80vw",
+        width: "80%",
         background: "#FFCC00",
         borderRadius: "14px"
       }}

@@ -7,9 +7,18 @@ import InviteStep from "../components/InviteStep";
 import DownloadBtn from "../components/DownloadBtn";
 import WechatCardWrap from "../components/WechatCardWrap";
 import sloganIcon from "../assets/slogan.png";
+import "./Share.css";
 
 class Share extends React.Component {
   render() {
+    const debug = window.location.href.indexOf("debug") !== -1;
+    if (debug) {
+      try {
+        window.alert(window.document.documentElement.clientHeight);
+      } catch (err) {
+        alert(JSON.stringify(err));
+      }
+    }
     const { userInfo } = this.props;
     return (
       <WechatCardWrap>
@@ -59,15 +68,7 @@ class Share extends React.Component {
           {/* <QRCode /> */}
           <InviteStep />
           <DownloadBtn />
-          <div
-            style={{
-              width: "60vw",
-              position: "absolute",
-              bottom: "16px",
-              left: "50%",
-              transform: "translateX(-50%)"
-            }}
-          >
+          <div className="slogan">
             <img
               src={sloganIcon}
               alt="slogan"

@@ -1,0 +1,17 @@
+.slogan {
+  width: 60%;
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (max-height: 42.4rem) {
+  .slogan {
+    width: 60%;
+    position: static;
+    margin: 16px auto;
+    margin-top: 6rem;
+    transform: none;
+  }
+}
