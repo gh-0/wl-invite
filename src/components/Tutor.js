@@ -39,7 +39,7 @@ class Tutor extends React.Component {
             color: '#000',
           }}
         >
-          {userId + 9999}
+          {userId}
         </p>
         <section
           style={{

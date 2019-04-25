@@ -55,7 +55,7 @@ class InviteListItem extends React.Component {
               fontSize: "1.2rem"
             }}
           >
-            {userId + 9999}
+            {userId}
           </p>
         </div>
         <p
