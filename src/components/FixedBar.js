@@ -9,18 +9,22 @@ import qqZoneIcon from "../assets/ic_weekly_newspaper_share_zone_n.png";
 const share = (type, title) => {
   const search = new URLSearchParams(window.location.search);
   const token = search.get("token") || "004FD89B536DD4038DA497B994D6CE92";
-  fnCall(
-    "share",
-    {
-      type,
-      url: `https://api.wenliaokeji.com/h5/?token=${token}#/share`,
-      title,
-      image:
-        "https://wllive.oss-cn-shenzhen.aliyuncs.com/resources/sys/icon/512wenliaox.png",
-      content: "发布问题，解决你的疑惑。\n写下故事，找到有趣的人。"
-    },
-    ["type", "url", "title", "image", "content"]
-  );
+  try {
+    fnCall(
+      "share",
+      {
+        type,
+        url: `https://api.wenliaokeji.com/h5/?token=${token}#/share`,
+        title,
+        image:
+          "https://wllive.oss-cn-shenzhen.aliyuncs.com/resources/sys/icon/512wenliaox.png",
+        content: "发布问题，解决你的疑惑。\\n写下故事，找到有趣的人。"
+      },
+      ["type", "url", "title", "image", "content"]
+    );
+  } catch (e) {
+    fnCall("alert", { type: 2, message: e.message }, ["type", "message"]);
+  }
 };
 
 const Icon = ({ icon, onClick }) => {

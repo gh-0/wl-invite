@@ -1,5 +1,5 @@
 import React from 'react';
-import StepIcon from '../assets/邀请步骤.png';
+import StepIcon from '../assets/step.png';
 
 class InviteSteps extends React.Component {
   render() {
