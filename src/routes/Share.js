@@ -20,6 +20,7 @@ class Share extends React.Component {
       }
     }
     const { userInfo } = this.props;
+    console.log(userInfo);
     return (
       <WechatCardWrap>
         <div
@@ -61,7 +62,7 @@ class Share extends React.Component {
           />
           <UserInfo
             size="l"
-            src={userInfo.headImage}
+            avatar={userInfo.headImage}
             username={userInfo.username}
           />
           <ShareInviteCode code={userInfo.code} />

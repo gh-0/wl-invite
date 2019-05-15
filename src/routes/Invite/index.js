@@ -12,7 +12,7 @@ import Empty from "../../components/Empty";
 import actions from "../../actions/user";
 
 const Invite = ({
-  userInfo: { avatar, username, userId, code, codeInvite },
+  userInfo: { headImage, username, userId, code, codeInvite },
   inviteList,
   tutor,
   bindInvite
@@ -51,7 +51,7 @@ const Invite = ({
           }}
         />
       </div>
-      <UserInfo avatar={avatar} username={username} />
+      <UserInfo avatar={headImage} username={username} />
       <div
         style={{
           marginTop: "1.6rem"

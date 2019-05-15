@@ -15,7 +15,7 @@ const getPreOpts = () => {
 export default async (url, opts = {}) => {
   const preOpts = getPreOpts();
   if (process.env.NODE_ENV === 'development') url = '/2api' + url;
-  else url = 'https://api.wenliaokeji.com/cors-api' + url;
+  else url = 'https://api.wenliaokeji.com/cors-server' + url;
   const res = await fetch(url, {
     ...preOpts,
     ...opts,
